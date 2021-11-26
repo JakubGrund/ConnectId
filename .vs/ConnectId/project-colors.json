@@ -5,6 +5,11 @@
       "ProjectGuid": "a8f3dfa0-5d29-498e-994f-8e5196fbc9c9",
       "DisplayName": "ConnectId",
       "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Ostatní soubory",
+      "ColorIndex": -1
     }
   },
   "NextColorIndex": 1

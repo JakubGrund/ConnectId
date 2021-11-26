@@ -1,0 +1,16 @@
+C:\Users\Jakub\Desktop\ConnectId\ConnectId\bin\Debug\net5.0\ConnectId.exe
+C:\Users\Jakub\Desktop\ConnectId\ConnectId\bin\Debug\net5.0\ConnectId.deps.json
+C:\Users\Jakub\Desktop\ConnectId\ConnectId\bin\Debug\net5.0\ConnectId.runtimeconfig.json
+C:\Users\Jakub\Desktop\ConnectId\ConnectId\bin\Debug\net5.0\ConnectId.runtimeconfig.dev.json
+C:\Users\Jakub\Desktop\ConnectId\ConnectId\bin\Debug\net5.0\ConnectId.dll
+C:\Users\Jakub\Desktop\ConnectId\ConnectId\bin\Debug\net5.0\ref\ConnectId.dll
+C:\Users\Jakub\Desktop\ConnectId\ConnectId\bin\Debug\net5.0\ConnectId.pdb
+C:\Users\Jakub\Desktop\ConnectId\ConnectId\obj\Debug\net5.0\ConnectId.csproj.AssemblyReference.cache
+C:\Users\Jakub\Desktop\ConnectId\ConnectId\obj\Debug\net5.0\ConnectId.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jakub\Desktop\ConnectId\ConnectId\obj\Debug\net5.0\ConnectId.AssemblyInfoInputs.cache
+C:\Users\Jakub\Desktop\ConnectId\ConnectId\obj\Debug\net5.0\ConnectId.AssemblyInfo.cs
+C:\Users\Jakub\Desktop\ConnectId\ConnectId\obj\Debug\net5.0\ConnectId.csproj.CoreCompileInputs.cache
+C:\Users\Jakub\Desktop\ConnectId\ConnectId\obj\Debug\net5.0\ConnectId.dll
+C:\Users\Jakub\Desktop\ConnectId\ConnectId\obj\Debug\net5.0\ref\ConnectId.dll
+C:\Users\Jakub\Desktop\ConnectId\ConnectId\obj\Debug\net5.0\ConnectId.pdb
+C:\Users\Jakub\Desktop\ConnectId\ConnectId\obj\Debug\net5.0\ConnectId.genruntimeconfig.cache
