@@ -24,12 +24,35 @@ namespace ConnectId
             var payloadJWT = partsJWT[1]; // payload from JWT token
             var signatureJWT = partsJWT[2]; // signature from Jwt token 
 
+            // RSA Parameters (Mod and Exp)
+
             RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
             rsa.ImportParameters(new RSAParameters()
             {
                 Modulus = FromBase64Url("2a70SwgqIh8U-Shj_VJJGBheEVk2F4ygmMCRtKUAb1jMP6R1j5Mc5xaqhgzlWjckJI1lx4rha1oNLrdg8tJBxdm8V8xZohCOanJ52uAwoc6FFTY3VRLaUZSJ3zCXfuJwy4KvFHJUAuLhLj0hVeq-y10CmRJ1_MPTuNRJLdblSWcXyWYIikIRggQWS04M-QjR7571mX-Lu_eDs8xJVrnNFMVGRmFqf3EFD4QLNjW9JJj0m_prnTv41V_E8AA7MQZ12ip3u5aeOAQqGjVyzdHxvV9laxta6XWaM8QSTIu_Zav1-aDYExp99nCP4Hw0_Oom5vK5N88DB8VM0mouQi8a8Q"),
                 Exponent = FromBase64Url("AQAB")
             });
+
+            // Hash
+
+            SHA256 sha256 = SHA256.Create();
+            byte[] hash = sha256.ComputeHash(Encoding.UTF8.GetBytes(headerJWT + '.' + payloadJWT));
+
+            // Verify the hash
+
+            RSAPKCS1SignatureDeformatter rsaDeformatter = new RSAPKCS1SignatureDeformatter(rsa);
+            rsaDeformatter.SetHashAlgorithm("SHA256");
+            
+            if (rsaDeformatter.VerifySignature(hash, FromBase64Url(signatureJWT)))
+            {
+                Console.Write("Výsledek ověření podpisu: ");
+                Console.WriteLine("Podpis je ověřen");
+            }
+            else
+            {
+                Console.Write("Výsledek ověření podpisu: ");
+                Console.WriteLine("Podpis nebyl ověřen");
+            }
         }
         static byte[] FromBase64Url(string base64Url)
             {
