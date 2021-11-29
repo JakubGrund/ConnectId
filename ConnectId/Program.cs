@@ -33,14 +33,15 @@ namespace ConnectId
                 Exponent = FromBase64Url("AQAB")
             });
 
-            // Hash
+            // Hashovani headeru a payloadu pomoci - SHA256
 
             SHA256 sha256 = SHA256.Create();
             byte[] hash = sha256.ComputeHash(Encoding.UTF8.GetBytes(headerJWT + '.' + payloadJWT));
 
-            // Verify the hash
+            // Sifrovani pomoci RSA (mohlo by i pomoci HMAC, ale to neni nas pripad, protoze v headeru je RS)
 
             RSAPKCS1SignatureDeformatter rsaDeformatter = new RSAPKCS1SignatureDeformatter(rsa);
+
             rsaDeformatter.SetHashAlgorithm("SHA256");
             
             if (rsaDeformatter.VerifySignature(hash, FromBase64Url(signatureJWT)))
@@ -53,6 +54,8 @@ namespace ConnectId
                 Console.Write("Výsledek ověření podpisu: ");
                 Console.WriteLine("Podpis nebyl ověřen");
             }
+
+            // rsaDeformatter jsem nastudoval v dokumentaci od Microsoftu - https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.rsapkcs1signaturedeformatter.verifysignature?redirectedfrom=MSDN&view=net-6.0#System_Security_Cryptography_RSAPKCS1SignatureDeformatter_VerifySignature_System_Byte___System_Byte___
         }
         static byte[] FromBase64Url(string base64Url)
             {
